@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clutch - AI-Driven Educational Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <h1>Clutch</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-upload"></i> Upload</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                    <li><a href="#"><i class="fas fa-clone"></i> Flashcards</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Summary</a></li>
+                    <li><a href="#"><i class="fas fa-youtube"></i> Resources</a></li>
+                    <li><a href="#"><i class="fas fa-clock"></i> Wellness</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <img src="https://via.placeholder.com/40" alt="User Avatar">
+                    <span>Vaishnavi</span>
+                </div>
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for topics, materials...">
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline"><i class="fas fa-bell"></i></button>
+                    <button class="btn btn-outline"><i class="fas fa-cog"></i></button>
+                    <div class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard">
+                <div class="dashboard-header">
+                    <h2>Welcome back, Vaishnavi!</h2>
+                    <p>Continue your learning journey</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Study Time Today</h3>
+                            <p class="stat-value">1h 45m</p>
+                            <p class="stat-change positive">+20% from yesterday</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Quiz Accuracy</h3>
+                            <p class="stat-value">78%</p>
+                            <p class="stat-change positive">+5% from last week</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clone"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Flashcards Reviewed</h3>
+                            <p class="stat-value">124</p>
+                            <p class="stat-change positive">+12 since yesterday</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 62%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Learning Streak</h3>
+                            <p class="stat-value">7 days</p>
+                            <p class="stat-change">Keep it up!</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs Section -->
+                <div class="tabs-container">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="upload">Upload Materials</button>
+                        <button class="tab-btn" data-tab="quiz">Personalized Quiz</button>
+                        <button class="tab-btn" data-tab="flashcards">Flashcards</button>
+                        <button class="tab-btn" data-tab="summary">AI Summary</button>
+                        <button class="tab-btn" data-tab="resources">Resources</button>
+                        <button class="tab-btn" data-tab="wellness">Wellness</button>
+                    </div>
+
+                    <!-- Upload Tab Content -->
+                    <div class="tab-content active" id="upload">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Upload Learning Materials</h3>
+                                <p>Upload your study materials to generate personalized learning resources</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="upload-area">
+                                    <div class="upload-icon">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                    </div>
+                                    <h4>Drag and drop your files here</h4>
+                                    <p>Supports PDF, DOCX, PPT, TXT, and more</p>
+                                    <button class="btn btn-primary">Browse Files</button>
+                                </div>
+                                <div class="uploaded-files">
+                                    <h4>Recent Uploads</h4>
+                                    <div class="file-list">
+                                        <div class="file-item">
+                                            <div class="file-icon pdf">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </div>
+                                            <div class="file-info">
+                                                <h5>OOPS CHAP 3.pdf</h5>
+                                                <p>Uploaded 2 minutes ago • Processing complete</p>
+                                            </div>
+                                            <div class="file-actions">
+                                                <button class="btn btn-sm btn-outline">View</button>
+                                                <button class="btn btn-sm btn-outline">Generate</button>
+                                            </div>
+                                        </div>
+                                        <div class="file-item">
+                                            <div class="file-icon doc">
+                                                <i class="fas fa-file-word"></i>
+                                            </div>
+                                            <div class="file-info">
+                                                <h5>DAA_Notes.docx</h5>
+                                                <p>Uploaded 0 hour ago • Processing complete</p>
+                                            </div>
+                                            <div class="file-actions">
+                                                <button class="btn btn-sm btn-outline">View</button>
+                                                <button class="btn btn-sm btn-outline">Generate</button>
+                                            </div>
+                                        </div>
+                                        <div class="file-item">
+                                            <div class="file-icon ppt">
+                                                <i class="fas fa-file-powerpoint"></i>
+                                            </div>
+                                            <div class="file-info">
+                                                <h5>OOPS.pptx</h5>
+                                                <p>Uploaded 2 days ago • Processing complete</p>
+                                            </div>
+                                            <div class="file-actions">
+                                                <button class="btn btn-sm btn-outline">View</button>
+                                                <button class="btn btn-sm btn-outline">Generate</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Tab Content -->
+                    <div class="tab-content" id="quiz">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3> OOPS CHP 3</h3>
+                                <p>Based on OOPS CH 3.pdf</p>
+                                <div class="quiz-progress">
+                                    <span>Question 3 of 10</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 30%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="quiz-question">
+                                    <h4>What is the primary function of printf in c?</h4>
+                                    <div class="quiz-options">
+                                        <div class="option">
+                                            <input type="radio" id="option-a" name="question">
+                                            <label for="option-a">daa</label>
+                                        </div>
+                                        <div class="option">
+                                            <input type="radio" id="option-b" name="question">
+                                            <label for="option-b">maths</label>
+                                        </div>
+                                        <div class="option">
+                                            <input type="radio" id="option-c" name="question">
+                                            <label for="option-c">java</label>
+                                        </div>
+                                        <div class="option">
+                                            <input type="radio" id="option-d" name="question">
+                                            <label for="option-d">oops</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline">Previous</button>
+                                <button class="btn btn-primary">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flashcards Tab Content -->
+                    <div class="tab-content" id="flashcards">
+                        <div class="flashcard-header">
+                            <h3>Biology - oops</h3>
+                            <span>Card 1 of 20</span>
+                        </div>
+                        <div class="flashcard-container">
+                            <div class="flashcard">
+                                <div class="flashcard-inner">
+                                    <div class="flashcard-front">
+                                        <h4>What is the primary function of Printf?</h4>
+                                    </div>
+                                    <div class="flashcard-back">
+                                        <p>JAVA OOPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flashcard-controls">
+                                <button class="btn btn-circle btn-outline"><i class="fas fa-chevron-left"></i></button>
+                                <button class="btn btn-circle btn-outline"><i class="fas fa-redo"></i></button>
+                                <button class="btn btn-circle btn-outline"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary Tab Content -->
+                    <div class="tab-content" id="summary">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="summary-header">
+                                    <div>
+                                        <h3>OOPS CHP 3</h3>
+                                        <p>Generated from OOPS CHP 3.pdf</p>
+                                    </div>
+                                    <div class="summary-actions">
+                                        <button class="btn btn-outline"><i class="fas fa-download"></i> Download</button>
+                                        <button class="btn btn-outline"><i class="fas fa-share"></i> Share</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="summary-content">
+                                    <div class="key-concepts">
+                                        <h4>Key Concepts</h4>
+                                        <div class="tags">
+                                            <span class="tag">java</span>
+                                            <span class="tag">oop</span>
+                                            <span class="tag">cybersec</span>
+                                            <span class="tag">AI</span>
+                                            <span class="tag">CORE</span>
+                                            <span class="tag">DSA</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="summary-text">
+                                        <h4>Summary</h4>
+                                        <p>ctrl freaksssssss</p>
+                                        <p>hehehe</p>
+                                        <p>code and die</p>
+                                        <p>;(</p>
+                                    </div>
+                                    
+                                    <div class="important-points">
+                                        <h4>Important Points</h4>
+                                        <ul>
+                                            <li><span class="point-marker"></span>.......</li>
+                                            <li><span class="point-marker"></span>.......</li>
+                                            <li><span class="point-marker"></span>.......</li>
+                                            <li><span class="point-marker"></span>.......</li>
+                                            <li><span class="point-marker"></span>.......</li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resources Tab Content -->
+                    <div class="tab-content" id="resources">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Recommended Videos</h3>
+                                <p>Personalized video recommendations based on your study materials</p>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="section-title">Biology - Cell Structure</h4>
+                                <div class="video-grid">
+                                    <div class="video-card">
+                                        <div class="video-thumbnail">
+                                            <div class="thumbnail-placeholder"></div>
+                                            <span class="match-badge">98% Match</span>
+                                        </div>
+                                        <div class="video-info">
+                                            <h5>Cell Structure and Function</h5>
+                                            <p>By Khan Academy • 1.2M views</p>
+                                            <p class="video-description">This video explains the structure and function of cells, including organelles and their roles.</p>
+                                            <div class="video-actions">
+                                                <div class="feedback-buttons">
+                                                    <button class="btn btn-sm btn-outline"><i class="fas fa-thumbs-up"></i> Helpful</button>
+                                                    <button class="btn btn-sm btn-outline"><i class="fas fa-thumbs-down"></i> Not Helpful</button>
+                                                </div>
+                                                <button class="btn btn-sm btn-outline"><i class="fas fa-external-link-alt"></i> Watch</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="video-card">
+                                        <div class="video-thumbnail">
+                                            <div class="thumbnail-placeholder"></div>
+                                            <span class="match-badge">00% Match</span>
+                                        </div>
+                                        <div class="video-info">
+                                            <h5>Mitochondria: Powerhouse of the Cell</h5>
+                                            <p>By Crash Course • 0.0M views</p>
+                                            <p class="video-description">Java</p>
+                                            <div class="video-actions">
+                                                <div class="feedback-buttons">
+                                                    <button class="btn btn-sm btn-outline"><i class="fas fa-thumbs-up"></i> Helpful</button>
+                                                    <button class="btn btn-sm btn-outline"><i class="fas fa-thumbs-down"></i> Not Helpful</button>
+                                                </div>
+                                                <button class="btn btn-sm btn-outline"><i class="fas fa-external-link-alt"></i> Watch</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wellness Tab Content -->
+                    <div class="tab-content" id="wellness">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Wellness Monitoring</h3>
+                                <p>Monitor your study habits and wellness metrics</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="wellness-metrics">
+                                    <div class="wellness-metric">
+                                        <div class="metric-header">
+                                            <h4>Screen Time Today</h4>
+                                            <span id="screen-time">00h 00m</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 65%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="wellness-metric">
+                                        <div class="metric-header">
+                                            <h4>Break Frequency</h4>
+                                            <span>Every 45m</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="wellness-metric">
+                                        <div class="metric-header">
+                                            <h4>Stress Indicators</h4>
+                                            <span id="stress-level">Low</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div id="stress-progress" class="progress" style="width: 25%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="wellness-metric">
+                                        <div class="metric-header">
+                                            <h4>Drowsiness Status</h4>
+                                            <span id="drowsiness-status">Not Detected</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div id="drowsiness-progress" class="progress" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="webcam-container">
+                                    <h4>Drowsiness Detection</h4>
+                                    <div class="webcam-wrapper">
+                                        <video id="webcam" autoplay playsinline width="320" height="240"></video>
+                                        <canvas id="webcam-overlay" width="320" height="240"></canvas>
+                                    </div>
+                                    <div class="webcam-controls">
+                                        <button id="start-monitoring" class="btn btn-primary">Start Monitoring</button>
+                                        <button id="stop-monitoring" class="btn btn-outline" style="display: none;">Stop Monitoring</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="wellness-exercises">
+                                    <h4>Wellness Exercises</h4>
+                                    <div class="exercises-grid">
+                                        <div class="exercise-card">
+                                            <h4>Eye Relaxation</h4>
+                                            <p>1. Follow the 20-20-20 rule</p>
+                                            <p>2. Every 20 minutes, look at something 20 feet away</p>
+                                            <p>3. Focus on it for 20 seconds</p>
+                                            <p>4. Blink slowly 10 times</p>
+                                            <p>5. Return to your work</p>
+                                        </div>
+                                        <div class="exercise-card">
+                                            <h4>Neck Stretches</h4>
+                                            <p>1. Slowly tilt your head toward your right shoulder</p>
+                                            <p>2. Hold for 10 seconds</p>
+                                            <p>3. Return to center</p>
+                                            <p>4. Repeat on the left side</p>
+                                            <p>5. Do 3 sets on each side</p>
+                                        </div>
+                                        <div class="exercise-card">
+                                            <h4>Deep Breathing</h4>
+                                            <p>1. Sit up straight with relaxed shoulders</p>
+                                            <p>2. Inhale deeply through your nose for 4 seconds</p>
+                                            <p>3. Hold for 2 seconds</p>
+                                            <p>4. Exhale slowly through your mouth for 6 seconds</p>
+                                            <p>5. Repeat 5-10 times</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="document-viewer">
+                    <div class="document-viewer-header">
+                        <h3>Document Viewer</h3>
+                        <button class="close-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="document-viewer-content">
+                        <div class="document-container">
+                            <!-- Document content will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="document-viewer-footer">
+                        <button class="btn btn-outline"><i class="fas fa-download"></i> Download</button>
+                        <button class="btn btn-primary"><i class="fas fa-magic"></i> Generate Learning Materials</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Session Panel -->
+        <div class="session-panel">
+            <div class="session-status">
+                <div class="session-indicator offline">
+                    <i class="fas fa-circle"></i>
+                    <span id="session-state">Session Inactive</span>
+                </div>
+                <div class="session-timer">
+                    <i class="fas fa-clock"></i>
+                    <span id="session-time">00:00:00</span>
+                </div>
+            </div>
+            <button id="start-session-btn" class="btn btn-primary">Start Study Session</button>
+            <button id="end-session-btn" class="btn btn-outline" style="display: none;">End Session</button>
+        </div>
+
+        <!-- Wellness Notification -->
+        <div class="wellness-notification">
+            <div class="notification-icon">
+                <i class="fas fa-eye"></i>
+            </div>
+            <div class="notification-content">
+                <h4>Time for a break!</h4>
+                <p>You've been studying for 45 minutes. Consider taking a short break and doing some eye exercises.</p>
+                <div class="notification-actions">
+                    <button class="btn btn-sm">View Exercises</button>
+                    <button class="btn btn-sm btn-outline">Dismiss</button>
+                </div>
+            </div>
+            <button class="notification-close"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Camera Permission Dialog -->
+        <div id="camera-permission-dialog" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center;">
+            <div style="background: white; padding: 20px; border-radius: 8px; max-width: 400px; text-align: center;">
+                <h3 style="margin-bottom: 15px;">Camera Access Required</h3>
+                <p style="margin-bottom: 20px;">Clutch needs access to your camera to monitor for signs of stress and drowsiness. This helps us provide timely wellness reminders.</p>
+                <p style="margin-bottom: 20px; font-size: 14px;">Your privacy is important to us. Camera data is processed locally and never stored or sent to any server.</p>
+                <div style="display: flex; justify-content: space-between;">
+                    <button id="deny-camera" class="btn btn-outline">No Thanks</button>
+                    <button id="allow-camera" class="btn btn-primary">Allow Camera</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chatbot -->
+        <div class="chatbot">
+            <div class="chatbot-toggle">
+                <i class="fas fa-comment-dots"></i>
+            </div>
+            <div class="chatbot-container">
+                <div class="chatbot-header">
+                    <div class="chatbot-title">
+                        <i class="fas fa-robot"></i>
+                        <h3>Study Assistant</h3>
+                    </div>
+                    <button class="chatbot-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="chatbot-messages">
+                    <div class="message bot">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm your AI study assistant. How can I help you today?</p>
+                            <span class="message-time">2 minutes ago</span>
+                        </div>
+                    </div>
+                    <div class="message user">
+                        <div class="message-content">
+                            <p>Can you help me understand the algorithms ?</p>
+                            <span class="message-time">1 minute ago</span>
+                        </div>
+                    </div>
+                    <div class="message bot">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>JAVA IS AN OOP</p>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                
+                            </ul>
+                            <p>Would you like me to explain any of these functions in more detail?</p>
+                            <span class="message-time">Just now</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbot-input">
+                    <input type="text" placeholder="Type your message...">
+                    <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add audio element for drowsiness alert -->
+    <audio id="alert-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-alert-quick-chime-766.mp3" preload="auto"></audio>
+
+    <script src="wellness-monitor.js"></script>
+    <script>
+        // Simple tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Toggle chatbot
+            const chatbotToggle = document.querySelector('.chatbot-toggle');
+            const chatbotContainer = document.querySelector('.chatbot-container');
+            const chatbotClose = document.querySelector('.chatbot-close');
+            
+            chatbotToggle.addEventListener('click', () => {
+                chatbotContainer.classList.toggle('active');
+            });
+            
+            chatbotClose.addEventListener('click', () => {
+                chatbotContainer.classList.remove('active');
+            });
+
+            // Close wellness notification
+            const notificationClose = document.querySelector('.notification-close');
+            const wellnessNotification = document.querySelector('.wellness-notification');
+            
+            notificationClose.addEventListener('click', () => {
+                wellnessNotification.classList.add('hidden');
+            });
+
+            // Show camera permission dialog on page load
+            const permissionDialog = document.getElementById('camera-permission-dialog');
+            permissionDialog.style.display = 'flex';
+            
+            const allowBtn = document.getElementById('allow-camera');
+            const denyBtn = document.getElementById('deny-camera');
+            
+            allowBtn.addEventListener('click', () => {
+                localStorage.setItem('cameraPermissionChoice', 'granted');
+                permissionDialog.style.display = 'none';
+            });
+            
+            denyBtn.addEventListener('click', () => {
+                localStorage.setItem('cameraPermissionChoice', 'denied');
+                permissionDialog.style.display = 'none';
+            });
+        });
+    </script>
+
+<div id="drowsiness-alert" class="drowsiness-alert hidden">
+    <div class="drowsiness-alert-content">
+        <div class="alert-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h3>Drowsiness Detected!</h3>
+        <p>You appear to be drowsy. Please take a short break to refresh yourself.</p>
+        <div class="alert-actions">
+            <button id="take-break-btn" class="btn btn-primary">Take a Break</button>
+            <button id="dismiss-alert-btn" class="btn btn-outline">Dismiss</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
